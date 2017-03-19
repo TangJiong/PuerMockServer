@@ -40,9 +40,9 @@ just edit ```_mockserver.json```, add new api object under api property
 }
 ```
 
-2. now you can access your api with ```localhost:8000/path/to/your/api``` get mock data as you defined
+2. now you can access your api with ```localhost:8000/path/to/your/api``` to get mock data as you expected
 
-3. more mock value @see[Mockjs](http://mockjs.com/examples.html)
+3. more mock value @see [Mockjs](http://mockjs.com/examples.html)
 
 ## thanks to
 
