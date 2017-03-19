@@ -10,7 +10,7 @@ git clone https://github.com/TangJiong/PuerMockServer.git
 
 2. install puer globally
 ```
-npm install puer
+npm install puer -g
 ```
 
 3. go to PuerMockServer project directory and run
