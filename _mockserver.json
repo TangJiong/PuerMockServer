@@ -1,0 +1,206 @@
+{
+
+  "$schema": "http://rawgit.com/ufologist/puer-mock/master/_mockserver-schema.json",
+
+  "info": {
+    "summary": "渠道云平台后台管理系统项目接口文档",
+    "description": "Powered by puer-mock"
+  },
+
+  "api": {
+    "POST /api/backCustomer/getCustomer": {
+      "info": {
+        "summary": "获取客户列表",
+        "module": "客户管理",
+        "description": "",
+        "author": ""
+      },
+
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+        	"customerName": "",
+        	"type": 0,
+        	"isValid": "1",
+        	"regionId": "",
+        	"pageNo": 0,
+        	"pageSize": 0,
+        	"accessToken": ""
+        }
+      },
+
+      "response": {
+        "result": "@pick(['0', '1'])",
+        "msg": "@csentence",
+        "total": "@integer(10,300)",
+        "pageNo": "10",
+        "totalPage": "@integer(1,30)",
+        "rows|10-30": [{
+          "customerId": "@id",
+          "customerName": "@cname",
+          "type": "@pick([1, 2, 3, 4, 5, 6])",
+          "valid": "@pick([true, false])",
+          "regionId": "@region",
+          "contacts": "@cname",
+          "phone": "@string('number', 11)",
+          "provName": "@province",
+          "provCode": "@increment",
+          "cityName": "@city",
+          "cityCode": "@increment",
+          "countyName": "@county",
+          "countyCode": "@increment",
+          "address": "@county(true)",
+          "storeId": "@id",
+          "storeName": "@ctitle"
+        }]
+      }
+    },
+
+    "POST /api/backCustomer/getOneCustomer": {
+      "info": {
+        "summary": "获取客户",
+        "module": "客户管理",
+        "description": "",
+        "author": ""
+      },
+
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+        	"customerName": "",
+        	"type": 0,
+        	"isValid": "1",
+        	"provCode": "",
+        	"cityCode": "",
+        	"countyCode": "",
+        	"regionId": "",
+        	"pageNo": 0,
+        	"pageSize": 0,
+        	"accessToken": ""
+        }
+      },
+
+      "response": {
+        "result": "@pick(['1'])",
+        "msg": "@csentence",
+        "customer": {
+          "customerId": "@id",
+          "customerName": "@cname",
+          "type": "@pick([1, 2, 3, 4, 5, 6])",
+          "regionId": "@region",
+          "contacts": "@cname",
+          "phone": "@string('number', 11)",
+          "provName": "@province",
+          "provCode": "@increment",
+          "cityName": "@city",
+          "cityCode": "@increment",
+          "countyName": "@county",
+          "countyCode": "@increment",
+          "address": "@county(true)",
+          "storeId": "@id",
+          "storeName": "@ctitle"
+        }
+      }
+    },
+
+    "POST /api/backCustomer/modifyCustomer": {
+      "info": {
+        "summary": "修改客户",
+        "module": "客户管理",
+        "description": "",
+        "author": ""
+      },
+
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+        	"customerId": "",
+        	"customerName": "",
+        	"type": 0,
+        	"contacts": "",
+        	"phone": "",
+        	"provName": "",
+        	"provCode": "",
+        	"cityName": "",
+        	"cityCode": "",
+        	"countyName": "",
+        	"countyCode": "",
+        	"address": "",
+        	"isValid": 0,
+        	"accessToken": ""
+        }
+      },
+
+      "response": {
+        "result": "@pick([1])",
+        "msg": "@csentence"
+      }
+    },
+
+    "POST /api/backCustomer/disableCustomer": {
+      "info": {
+        "summary": "停用客户",
+        "module": "客户管理",
+        "description": "",
+        "author": ""
+      },
+
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+        	"customerIdList": "",
+        	"isValid": 0,
+        	"accessToken": ""
+        }
+      },
+
+      "response": {
+        "result": "@pick([1])",
+        "msg": "@csentence"
+      }
+    },
+
+    "POST /api/backCustomer/addCustomer": {
+      "info": {
+        "summary": "新增客户",
+        "module": "客户管理",
+        "description": "",
+        "author": ""
+      },
+
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+        	"customerName": "",
+        	"type": 0,
+        	"contacts": "",
+        	"phone": "",
+        	"provName": "",
+        	"provCode": "",
+        	"cityName": "",
+        	"cityCode": "",
+        	"countyName": "",
+        	"countyCode": "",
+        	"address": "",
+        	"accessToken": ""
+        }
+      },
+
+      "response": {
+        "result": "@pick([1])",
+        "msg": "@csentence"
+      }
+    }
+
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "puer-mock-server",
+  "version": "1.0.0",
+  "description": "puer-mock-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "puer -a _mockserver.js"
+  },
+  "keywords": [
+    "puer-mock-server"
+  ],
+  "author": "tangjiong",
+  "license": "ISC",
+  "devDependencies": {
+    "puer-mock": "^1.2.0"
+  }
+}
